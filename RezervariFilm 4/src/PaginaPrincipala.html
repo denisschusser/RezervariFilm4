@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listă Filme</title>
+</head>
+<body>
+<header>
+    <h1>Listă Filme</h1>
+</header>
+
+<main>
+    <section class="movies-list">
+
+
+        <div class="movie" id="movie1">
+            <h2>Rocky</h2>
+            <p>Actiune/drama</p>
+            <p id="time1"></p>
+            <button onclick="rezervaFilm(1)">Rezervă acum</button>
+            <button onclick="stergeRezervare(1)">Șterge rezervare</button>
+            <select id="film1">
+                <option value="22:00">22:00</option>
+                <option value="20:00">20:00</option>
+                <option value="12:00">12:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+            </select>
+        </div>
+
+
+        <div class="movie" id="movie2">
+            <h2>Batman Begins</h2>
+            <p>Actiune</p>
+            <p id="time2"></p>
+            <button onclick="rezervaFilm(2)">Rezervă acum</button>
+            <button onclick="stergeRezervare(2)">Șterge rezervare</button>
+            <select id="film2">
+                <option value="22:00">22:00</option>
+                <option value="20:00">20:00</option>
+                <option value="12:00">12:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+            </select>
+        </div>
+
+        <div class="movie" id="movie3">
+            <h2>The Godfather</h2>
+            <p>Drama</p>
+            <p id="time3"></p>
+            <button onclick="rezervaFilm(2)">Rezervă acum</button>
+            <button onclick="stergeRezervare(2)">Șterge rezervare</button>
+            <select id="film3">
+                <option value="22:00">22:00</option>
+                <option value="20:00">20:00</option>
+                <option value="12:00">12:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+            </select>
+        </div>
+
+        <div class="movie" id="movie4">
+            <h2>Avengers</h2>
+            <p>Hero movies</p>
+            <p id="time4"></p>
+            <button onclick="rezervaFilm(2)">Rezervă acum</button>
+            <button onclick="stergeRezervare(2)">Șterge rezervare</button>
+            <select id="film4">
+                <option value="22:00">22:00</option>
+                <option value="20:00">20:00</option>
+                <option value="12:00">12:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+            </select>
+        </div>
+
+        <div class="movie" id="movie5">
+            <h2>Indiana Jones</h2>
+            <p>Adventure</p>
+            <p id="time5"></p>
+            <button onclick="rezervaFilm(2)">Rezervă acum</button>
+            <button onclick="stergeRezervare(2)">Șterge rezervare</button>
+            <select id="film5">
+                <option value="22:00">22:00</option>
+                <option value="20:00">20:00</option>
+                <option value="12:00">12:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+            </select>
+        </div>
+
+
+        <div class="movie" id="movie6">
+            <h2>Batman Begins</h2>
+            <p>Actiune</p>
+            <p id="time6"></p>
+            <button onclick="rezervaFilm(2)">Rezervă acum</button>
+            <button onclick="stergeRezervare(2)">Șterge rezervare</button>
+            <select id="film6">
+                <option value="22:00">22:00</option>
+                <option value="20:00">20:00</option>
+                <option value="12:00">12:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+            </select>
+        </div>
+
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-image: url('https://img.freepik.com/free-vector/cinema-label-poster_603843-2892.jpg'); /* Înlocuiește cu calea către imaginea ta */
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>
+
+    </section>
+</main>
+
+<footer>
+
+</footer>
+
+<script>
+    function rezervaFilm(numarFilm) {
+        const selectElement = document.getElementById(`film${numarFilm}`);
+        const selectedTime = selectElement.options[selectElement.selectedIndex].value;
+        const currentTime = new Date().toLocaleTimeString(); // Obține ora curentă
+        document.getElementById(`time${numarFilm}`).innerText = `Rezervat pentru ora ${selectedTime} la ${currentTime}`;
+        alert(`Ai rezervat filmul ${numarFilm} pentru ora ${selectedTime}.`);
+    }
+
+    function stergeRezervare(numarFilm) {
+        document.getElementById(`time${numarFilm}`).innerText = ""; // Șterge ora rezervării afișate
+        // Adaugă aici apelul către funcția care va șterge rezervarea din repository
+        // Poți folosi fetch sau alte metode pentru a comunica cu backend-ul Java pentru a face ștergerea efectivă a rezervării
+    }
+</script>
+</body>
+</html>
